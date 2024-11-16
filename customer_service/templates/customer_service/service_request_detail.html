@@ -1,0 +1,13 @@
+<!-- customer_service/templates/customer_service/service_request_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Service Request Details</h2>
+  <p><strong>Request Type:</strong> {{ service_request.request_type }}</p>
+  <p><strong>Description:</strong> {{ service_request.description }}</p>
+  <p><strong>Status:</strong> {{ service_request.status }}</p>
+  <p><strong>Submitted On:</strong> {{ service_request.created_at|date:"Y-m-d H:i" }}</p>
+  <p><strong>Last Updated:</strong> {{ service_request.updated_at|date:"Y-m-d H:i" }}</p>
+  <p><a href="{% url 'dashboard' %}">Back to Dashboard</a></p>
+{% endblock %}

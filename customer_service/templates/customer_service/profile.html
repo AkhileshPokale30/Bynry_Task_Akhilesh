@@ -1,0 +1,13 @@
+<!-- customer_service/templates/customer_service/profile.html -->
+
+{% extends "base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<h2>Profile Page</h2>
+<p>Welcome, {{ request.user.username }}!</p>
+<p>Email: {{ request.user.email }}</p>
+<p>First Name: {{ request.user.first_name }}</p>
+<p>Last Name: {{ request.user.last_name }}</p>
+{% endblock %}

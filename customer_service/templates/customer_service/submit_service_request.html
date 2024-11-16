@@ -1,0 +1,20 @@
+<!-- customer_service/templates/customer_service/submit_service_request.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Submit a Service Request</h2>
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Submit Request</button>
+  </form>
+
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock %}
